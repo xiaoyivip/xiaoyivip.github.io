@@ -3,11 +3,11 @@
   <title>小yiyi的博客</title>
   
   <subtitle>惟有热爱，可抵岁月漫长</subtitle>
-  <link href="http://xiaoyivip.github.io/atom.xml" rel="self"/>
+  <link href="https://xiaoyivip.github.io/atom.xml" rel="self"/>
   
-  <link href="http://xiaoyivip.github.io/"/>
+  <link href="https://xiaoyivip.github.io/"/>
   <updated>2021-03-06T10:09:12.206Z</updated>
-  <id>http://xiaoyivip.github.io/</id>
+  <id>https://xiaoyivip.github.io/</id>
   
   <author>
     <name>xuyi</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>小yiyi的博客诞生啦</title>
-    <link href="http://xiaoyivip.github.io/2021/03/06/%E5%B0%8Fyiyi%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E5%95%A6/"/>
-    <id>http://xiaoyivip.github.io/2021/03/06/%E5%B0%8Fyiyi%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E5%95%A6/</id>
+    <link href="https://xiaoyivip.github.io/2021/03/06/%E5%B0%8Fyiyi%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E5%95%A6/"/>
+    <id>https://xiaoyivip.github.io/2021/03/06/%E5%B0%8Fyiyi%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E5%95%A6/</id>
     <published>2021-03-06T10:05:55.000Z</published>
     <updated>2021-03-06T10:09:12.206Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://xiaoyivip.github.io/2021/03/06/hello-world/"/>
-    <id>http://xiaoyivip.github.io/2021/03/06/hello-world/</id>
+    <link href="https://xiaoyivip.github.io/2021/03/06/hello-world/"/>
+    <id>https://xiaoyivip.github.io/2021/03/06/hello-world/</id>
     <published>2021-03-06T09:03:51.354Z</published>
     <updated>2021-03-06T09:03:51.354Z</updated>
     
