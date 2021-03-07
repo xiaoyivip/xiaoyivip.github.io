@@ -23,36 +23,17 @@
     
     
     <entry>
-      <title>XiaoYi的博客诞生啦</title>
+      <title>关于&quot;写给女友&quot;</title>
       <link href="2021/03/06/%E5%B0%8Fyiyi%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E5%95%A6/"/>
       <url>2021/03/06/%E5%B0%8Fyiyi%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E5%95%A6/</url>
       
-        <content type="html"><![CDATA[<h1 id="我的个人博客"><a href="#我的个人博客" class="headerlink" title="我的个人博客"></a>我的个人博客</h1><p>就在今天，经过不懈努力，搭建完成啦我的个人github博客</p><p>博客记录着我的青春，记录了我的学习过程，欢迎大家关注哈</p><p><a href="https://imgtu.com/i/6KgMgx"><img src="https://s3.ax1x.com/2021/03/07/6KgMgx.md.jpg" alt="6KgMgx.md.jpg"></a></p>]]></content>
+        <content type="html"><![CDATA[<ul><li><p><input disabled="" type="checkbox"> </p><h5 id="关于和女朋友大人的记录随笔"><a href="#关于和女朋友大人的记录随笔" class="headerlink" title="关于和女朋友大人的记录随笔"></a>关于和女朋友大人的记录随笔</h5></li><li><p><input checked="" disabled="" type="checkbox"> </p><h5 id="记录女朋友大人立下的flag"><a href="#记录女朋友大人立下的flag" class="headerlink" title="记录女朋友大人立下的flag"></a>记录女朋友大人立下的flag</h5></li><li><p><input disabled="" type="checkbox"> </p><h5 id="时不时分享一些矫情小文文"><a href="#时不时分享一些矫情小文文" class="headerlink" title="时不时分享一些矫情小文文"></a>时不时分享一些矫情小文文</h5></li><li><p><input disabled="" type="checkbox"> </p><h5 id="为女朋友大人准备的技术小灶"><a href="#为女朋友大人准备的技术小灶" class="headerlink" title="为女朋友大人准备的技术小灶"></a>为女朋友大人准备的技术小灶</h5></li><li><p><input disabled="" type="checkbox"> </p><h5 id="我的记仇小本本"><a href="#我的记仇小本本" class="headerlink" title="我的记仇小本本"></a>我的记仇小本本</h5></li><li><p><input disabled="" type="checkbox"> </p><h5 id="那些年，我们一起开过的车"><a href="#那些年，我们一起开过的车" class="headerlink" title="那些年，我们一起开过的车"></a>那些年，我们一起开过的车</h5></li><li><p><input disabled="" type="checkbox"> </p><h5 id="偶尔写写我们的小缘分"><a href="#偶尔写写我们的小缘分" class="headerlink" title="偶尔写写我们的小缘分"></a>偶尔写写我们的小缘分</h5></li><li><p><input disabled="" type="checkbox"> </p><h5 id="我们的future"><a href="#我们的future" class="headerlink" title="我们的future"></a>我们的future</h5></li></ul><p><a href="https://imgtu.com/i/6MYdQs"><img src="https://s3.ax1x.com/2021/03/07/6MYdQs.jpg" alt="6MYdQs.jpg"></a></p>]]></content>
       
       
       
         <tags>
             
             <tag> 闲谈 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="2021/03/06/hello-world/"/>
-      <url>2021/03/06/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
             
         </tags>
       
