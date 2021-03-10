@@ -6,7 +6,7 @@
   <link href="https://www.waer.ltd/atom.xml" rel="self"/>
   
   <link href="https://www.waer.ltd/"/>
-  <updated>2021-03-07T13:12:39.542Z</updated>
+  <updated>2021-03-10T06:47:50.890Z</updated>
   <id>https://www.waer.ltd/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Markdown使用记录</title>
+    <link href="https://www.waer.ltd/2021/03/10/Markdown%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
+    <id>https://www.waer.ltd/2021/03/10/Markdown%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-03-10T05:33:51.000Z</published>
+    <updated>2021-03-10T06:47:50.890Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h1&gt;&lt;h2 id=&quot;百度百科&quot;&gt;&lt;a href=&quot;#百度百科&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="学习笔记" scheme="https://www.waer.ltd/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Markdown" scheme="https://www.waer.ltd/tags/Markdown/"/>
+    
+    <category term="持续更新" scheme="https://www.waer.ltd/tags/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
+    
+    <category term="实用软件" scheme="https://www.waer.ltd/tags/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="Typora" scheme="https://www.waer.ltd/tags/Typora/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HTML+CSS写的炫酷登录界面</title>
     <link href="https://www.waer.ltd/2021/03/07/HTML-CSS%E5%86%99%E7%9A%84%E7%82%AB%E9%85%B7%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2/"/>
     <id>https://www.waer.ltd/2021/03/07/HTML-CSS%E5%86%99%E7%9A%84%E7%82%AB%E9%85%B7%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2/</id>
     <published>2021-03-07T12:39:24.000Z</published>
-    <updated>2021-03-07T13:12:39.542Z</updated>
+    <updated>2021-03-10T07:17:57.383Z</updated>
     
     
       
@@ -37,6 +68,12 @@
     
     <category term="开源" scheme="https://www.waer.ltd/tags/%E5%BC%80%E6%BA%90/"/>
     
+    <category term="前端" scheme="https://www.waer.ltd/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="HTML+CSS" scheme="https://www.waer.ltd/tags/HTML-CSS/"/>
+    
+    <category term="炫酷" scheme="https://www.waer.ltd/tags/%E7%82%AB%E9%85%B7/"/>
+    
   </entry>
   
   <entry>
@@ -44,7 +81,7 @@
     <link href="https://www.waer.ltd/2021/03/07/%E5%86%99%E7%BB%99%E5%A5%B3%E5%8F%8B/"/>
     <id>https://www.waer.ltd/2021/03/07/%E5%86%99%E7%BB%99%E5%A5%B3%E5%8F%8B/</id>
     <published>2021-03-07T09:59:44.000Z</published>
-    <updated>2021-03-07T12:15:07.025Z</updated>
+    <updated>2021-03-10T06:54:35.702Z</updated>
     
     
     <summary type="html">Here&#39;s something encrypted, password is required to continue reading.</summary>
@@ -54,6 +91,12 @@
     
     <category term="写给女友" scheme="https://www.waer.ltd/tags/%E5%86%99%E7%BB%99%E5%A5%B3%E5%8F%8B/"/>
     
+    <category term="青春" scheme="https://www.waer.ltd/tags/%E9%9D%92%E6%98%A5/"/>
+    
+    <category term="flag" scheme="https://www.waer.ltd/tags/flag/"/>
+    
+    <category term="私密" scheme="https://www.waer.ltd/tags/%E7%A7%81%E5%AF%86/"/>
+    
   </entry>
   
   <entry>
@@ -61,7 +104,7 @@
     <link href="https://www.waer.ltd/2021/03/06/%E5%B0%8Fyiyi%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E5%95%A6/"/>
     <id>https://www.waer.ltd/2021/03/06/%E5%B0%8Fyiyi%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%AF%9E%E7%94%9F%E5%95%A6/</id>
     <published>2021-03-06T10:05:55.000Z</published>
-    <updated>2021-03-07T12:30:44.125Z</updated>
+    <updated>2021-03-10T07:14:40.320Z</updated>
     
     
       
@@ -77,7 +120,11 @@
     
     
     
+    <category term="写给女友" scheme="https://www.waer.ltd/tags/%E5%86%99%E7%BB%99%E5%A5%B3%E5%8F%8B/"/>
+    
     <category term="闲谈" scheme="https://www.waer.ltd/tags/%E9%97%B2%E8%B0%88/"/>
+    
+    <category term="说明" scheme="https://www.waer.ltd/tags/%E8%AF%B4%E6%98%8E/"/>
     
   </entry>
   
