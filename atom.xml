@@ -6,7 +6,7 @@
   <link href="https://www.waer.ltd/atom.xml" rel="self"/>
   
   <link href="https://www.waer.ltd/"/>
-  <updated>2021-03-11T12:26:53.727Z</updated>
+  <updated>2021-03-15T09:56:38.612Z</updated>
   <id>https://www.waer.ltd/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目复盘-JSP的增删改查</title>
+    <link href="https://www.waer.ltd/2021/03/15/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98-JSP%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"/>
+    <id>https://www.waer.ltd/2021/03/15/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98-JSP%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</id>
+    <published>2021-03-15T09:42:05.000Z</published>
+    <updated>2021-03-15T09:56:38.612Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h1&gt;&lt;h2 id=&quot;技术选型&quot;&gt;&lt;a href=&quot;#技术选型&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="JSP开发" scheme="https://www.waer.ltd/tags/JSP%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="项目复盘" scheme="https://www.waer.ltd/tags/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/"/>
+    
+    <category term="MVC模式" scheme="https://www.waer.ltd/tags/MVC%E6%A8%A1%E5%BC%8F/"/>
+    
+    <category term="MySQL" scheme="https://www.waer.ltd/tags/MySQL/"/>
+    
+    <category term="连载" scheme="https://www.waer.ltd/tags/%E8%BF%9E%E8%BD%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>推理常识</title>
