@@ -46,9 +46,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="XiaoYi的博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="XiaoYi的博客" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 <!--<iframe width="250" scrolling="no" height="90" frameborder="0" allowtransparency="true" src="https://i.tianqi.com?c=code&id=7&icon=1&site=12"></iframe>-->
@@ -489,21 +489,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-20
+                    2021-03-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    781
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    7 分
                 </div>
                 
 
@@ -649,6 +649,105 @@
 </ol>
 <h3 id="示例-8"><a href="#示例-8" class="headerlink" title="示例"></a>示例</h3><iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%253C%21--%2520%2520%2520%2520P%25E5%2591%25BD%25E5%2590%258D%25E7%25A9%25BA%25E9%2597%25B4%25E7%259A%2584%25E7%2594%25A8%25E6%25B3%2595--%253E%250A%2520xmlns%253Ap%253D%2522http%253A%252F%252Fwww.springframework.org%252Fschema%252Fp%2522%250A%2520%2520%2520%2520%253Cbean%2520id%253D%2522user6%2522%2520class%253D%2522cn.ex.waer.bean.User%2522%2520%250A%2520%2520%2520%2520%2520%2520p%253Aname%253D%2522P%25E5%2591%25BD%25E5%2590%258D%25E7%25A9%25BA%25E9%2597%25B4%2522%2520p%253Aphones-ref%253D%2522phones%2522%253E%253C%252Fbean%253E" style="width: 594px; height: 257px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
 
+<h2 id="Bean的自动装配"><a href="#Bean的自动装配" class="headerlink" title="Bean的自动装配"></a>Bean的自动装配</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/6xcbvR"><img src="/medias/loading.gif" data-original="https://z3.ax1x.com/2021/03/27/6xcbvR.png" alt="6xcbvR.png"></a></p>
+<ul>
+<li>方法：Spring IoC 容器可以自动装配 Bean ，需要做的仅仅是在 <bean> 的 autowire 属性里指定自动装配的模式即可</bean></li>
+<li>byType:（根据类型自动装配）：若 IoC 容器中有多个与目标 Bean 类型一致的 Bean ，在这种情况下， Spring 将无法判定哪个 Bean 最合适该属性，所以不能执行自动装配。反之进行自动装配</li>
+<li>byName:(根据名称自动装配）：必须将目标 Bean 的名称和属性名设置的完全相同。</li>
+<li>constructor:(通过构造器自动装配）：当 Bean 中存在多个构造器时，此种自动装配方式将会很复杂，不推荐使用。</li>
+</ul>
+<h3 id="示例-9"><a href="#示例-9" class="headerlink" title="示例"></a>示例</h3><ul>
+<li><p><strong>三个实体类核心代码</strong></p>
+<iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%252F**%250A%2520*%2520%25E5%259C%25B0%25E5%259D%2580%25E7%25B1%25BB%250A%2520*%252F%250Apublic%2520class%2520Address%2520%257B%250A%2520%2520%2520%2520private%2520String%2520City%253B%250A%2520%2520%2520%2520private%2520String%2520Street%253B%250A%2520%2509%252F*%25E8%25AF%25A5%25E5%25A4%2584%25E4%25B8%25BA%25E5%25AF%25B9%25E5%25BA%2594%25E7%259A%2584get%2520and%2520set%2520%25E4%25B8%258EtoString%25E6%2596%25B9%25E6%25B3%2595%2520%25E7%2595%25A5*%252F%2520%2520%2520%250A%257D%250A%250A%250A%252F**%250A%2520*%2520%25E6%2589%258B%25E6%259C%25BA%25E7%25B1%25BB%250A%2520*%252F%250Apublic%2520class%2520Phone%2520%257B%250A%2520%2520%2520%2520private%2520String%2520brand%253B%250A%2520%2520%2520%2520private%2520String%2520country%253B%250A%2520%2509%252F*%25E8%25AF%25A5%25E5%25A4%2584%25E4%25B8%25BA%25E5%25AF%25B9%25E5%25BA%2594%25E7%259A%2584get%2520and%2520set%2520%25E4%25B8%258EtoString%25E6%2596%25B9%25E6%25B3%2595%2520%25E7%2595%25A5*%252F%2520%2520%2520%250A%257D%250A%250A%250A%252F*%250A%2520*%2520%25E7%2594%25A8%25E6%2588%25B7%25E7%25B1%25BB%250A%2520*%252F%250Apublic%2520class%2520User%2520%257B%250Aprivate%2520String%2520name%253B%250Aprivate%2520Phone%2520phone%253B%250Aprivate%2520Address%2520address%253B%250A%2520%2520%2520%2520%2509%252F*%25E8%25AF%25A5%25E5%25A4%2584%25E4%25B8%25BA%25E5%25AF%25B9%25E5%25BA%2594%25E7%259A%2584get%2520and%2520set%2520%25E4%25B8%258EtoString%25E6%2596%25B9%25E6%25B3%2595%2520%25E7%2595%25A5*%252F%250A%257D" style="width: 568px; height: 707px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe></li>
+<li><p><em><strong>byName方式</strong></em></p>
+<iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%253C%21--%2520%2520%2520%2520%25E5%259C%25B0%25E5%259D%2580%25E7%25B1%25BBbean%25E9%2585%258D%25E7%25BD%25AE--%253E%250A%2520%2520%2520%2520%253Cbean%250A%2520%2520%2520%2520%2509id%253D%2522address%2522%2520%250A%2520%2520%2509%2509class%253D%2522cn.ex.waer.bean.Test1.Address%2522%2520%250A%2520%2520%2520%2520%2520%2520%2509p%253Acity%253D%2522%25E6%259D%25AD%25E5%25B7%259E%2522%2520%250A%2520%2520%2520%2520%2520%2520%2509p%253Astreet%253D%2522%25E8%25A5%25BF%25E6%25B9%2596%2522%253E%250A%2520%2520%2520%2520%2520%2520%253C%252Fbean%253E%250A%253C%21--%2520%2520%2520%2520%25E6%2589%258B%25E6%259C%25BA%25E7%25B1%25BBbean%25E9%2585%258D%25E7%25BD%25AE--%253E%250A%2520%2520%2520%2520%253Cbean%2520%250A%2520%2520%2520%2520%2509%2509id%253D%2522phone%2522%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2509%2520class%253D%2522cn.ex.waer.bean.Test1.Phone%2522%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2509%2520p%253Abrand%253D%2522%25E5%25B0%258F%25E7%25B1%25B3%2522%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520p%253Acountry%253D%2522%25E4%25B8%25AD%25E5%259B%25BD%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Fbean%253E%250A%253C%21--%2520%2520%2520%2520%25E6%25A0%25B9%25E6%258D%25AEBean%25E7%259A%2584%25E5%2590%258D%25E5%25AD%2597%25E5%2592%258C%25E5%25BD%2593%25E5%2589%258Dbean%25E7%259A%2584setter%25E9%25A3%258E%25E6%25A0%25BC%25E7%259A%2584%25E5%25B1%259E%25E6%2580%25A7%25E8%25BF%259B%25E8%25A1%258C%25E8%2587%25AA%25E5%258A%25A8%25E8%25A3%2585%25E9%2585%258D%25EF%25BC%258C%25E8%258B%25A5%25E5%258C%25B9%25E9%2585%258D%25E5%2588%2599%25E8%2587%25AA%25E5%258A%25A8%25E8%25A3%2585%25E9%2585%258D%25EF%25BC%258C%25E5%258F%258D%25E4%25B9%258B%25E4%25B8%258D%25E8%25A3%2585%25E9%2585%258D--%253E%250A%2520%2520%2520%2520%253Cbean%2520%250A%2520%2520%2520%2509%2509%2509%2509%2509%2520id%253D%2522user%2522%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2509class%253D%2522cn.ex.waer.bean.Test1.User%2522%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2509p%253Aname%253D%2522%25E8%25AE%25B8%25E4%25BB%2599%2522%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520autowire%253D%2522byName%2522%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Fbean%253E" style="width: 851px; height: 563px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<p><em><strong>测试类</strong></em></p>
+<iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=public%2520class%2520beanTest1%2520%257B%250A%2520%2520%2520%2520ApplicationContext%2520ctx%253B%250A%2520%2520%2520%2520%2540Before%250A%2520%2520%2520%2520public%2520void%2520init%28%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520ctx%2520%253D%2520new%2520ClassPathXmlApplicationContext%28%2522myappxmlTest1.xml%2522%29%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2540Test%250A%2520%2520%2520%2520public%2520void%2520Test1%28%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520User%2520user%2520%253D%2520%28User%29%2520ctx.getBean%28%2522user%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28user%29%253B%250A%2520%2520%2520%2520%257D%250A%257D" style="width: 740px; height: 401px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+
+
+<p><em><strong>运行结果</strong></em></p>
+<iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=User%250A%257Bname%253D%27%25E8%25AE%25B8%25E4%25BB%2599%27%252C%250Aphone%253DPhone%250A%257Bbrand%253D%27%25E5%25B0%258F%25E7%25B1%25B3%27%252C%250Acountry%253D%27%25E4%25B8%25AD%25E5%259B%25BD%27%257D%252C%250Aaddress%253DAddress%257B%250ACity%253D%27%25E6%259D%25AD%25E5%25B7%259E%27%252C%2520Street%253D%27%25E8%25A5%25BF%25E6%25B9%2596%27%257D%257D" style="width: 375px; height: 311px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<p><em><strong>byType方式</strong></em></p>
+<iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%2520%2520%2520%253C%21--%2520%2520%2520%2520%25E5%259C%25B0%25E5%259D%2580%25E7%25B1%25BBbean%25E9%2585%258D%25E7%25BD%25AE--%253E%250A%2520%2520%2520%2520%253Cbean%2520id%253D%2522address3%2522%2520class%253D%2522cn.ex.waer.bean.Test1.Address%2522%2520p%253Acity%253D%2522%25E6%259D%25AD%25E5%25B7%259E%2522%2520p%253Astreet%253D%2522%25E8%25A5%25BF%25E6%25B9%2596%2522%253E%253C%252Fbean%253E%250A%2520%2520%2520%2520%253C%21--%2520%2520%2520%2520%25E6%2589%258B%25E6%259C%25BA%25E7%25B1%25BBbean%25E9%2585%258D%25E7%25BD%25AE--%253E%250A%2520%2520%2520%2520%253Cbean%2520id%253D%2522phone4%2522%2520class%253D%2522cn.ex.waer.bean.Test1.Phone%2522%2520p%253Abrand%253D%2522%25E5%25B0%258F%25E7%25B1%25B3%2522%2520p%253Acountry%253D%2522%25E4%25B8%25AD%25E5%259B%25BD%2522%253E%253C%252Fbean%253E%250A%2520%2520%2520%2520%253C%21--%2520%2520%2520%2520%25E6%25A0%25B9%25E6%258D%25AEBean%25E7%259A%2584%25E5%2590%258D%25E5%25AD%2597%25E5%2592%258C%25E5%25BD%2593%25E5%2589%258Dbean%25E7%259A%2584setter%25E9%25A3%258E%25E6%25A0%25BC%25E7%259A%2584%25E5%25B1%259E%25E6%2580%25A7%25E8%25BF%259B%25E8%25A1%258C%25E8%2587%25AA%25E5%258A%25A8%25E8%25A3%2585%25E9%2585%258D%25EF%25BC%258C%25E8%258B%25A5%25E5%258C%25B9%25E9%2585%258D%25E5%2588%2599%25E8%2587%25AA%25E5%258A%25A8%25E8%25A3%2585%25E9%2585%258D%25EF%25BC%258C%25E5%258F%258D%25E4%25B9%258B%25E4%25B8%258D%25E8%25A3%2585%25E9%2585%258D--%253E%250A%2520%2520%2520%2520%253Cbean%2520id%253D%2522user%2522%2520class%253D%2522cn.ex.waer.bean.Test1.User%2522%2520p%253Aname%253D%2522%25E8%25AE%25B8%25E4%25BB%2599%2522%2520autowire%253D%2522byType%2522%253E%253C%252Fbean%253E" style="width: 973px; height: 293px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<p><em><strong>运行结果</strong></em></p>
+<iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=User%257Bname%253D%27%25E8%25AE%25B8%25E4%25BB%2599%27%252C%2520phone%253DPhone%257Bbrand%253D%27%25E5%25B0%258F%25E7%25B1%25B3%27%252C%2520country%253D%27%25E4%25B8%25AD%25E5%259B%25BD%27%257D%252C%2520address%253DAddress%257BCity%253D%27%25E6%259D%25AD%25E5%25B7%259E%27%252C%2520Street%253D%27%25E8%25A5%25BF%25E6%25B9%2596%27%257D%257D" style="width: 1007px; height: 203px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<p><em><strong>小结</strong></em></p>
+<iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%25E5%25AF%25B9%25E4%25BA%258EbyName%25E7%259A%2584%25E8%2587%25AA%25E5%258A%25A8%25E8%25A3%2585%25E9%2585%258D%25E6%2596%25B9%25E5%25BC%258F%25EF%25BC%258Cbean%25E5%2590%258D%25E7%25A7%25B0%28id%29%25E5%25BF%2585%25E9%25A1%25BB%25E5%2592%258C%25E5%25AF%25B9%25E5%25BA%2594%25E7%259A%2584%25E5%25B1%259E%25E6%2580%25A7%25E5%2590%258D%25E4%25B8%2580%25E8%2587%25B4%25EF%25BC%258C%25E6%25AF%2594%25E5%25A6%2582%25E7%25A4%25BA%25E4%25BE%258B%25E4%25B8%25AD%25E7%259A%2584%250Aprivate%2520String%2520name%253B%250Aprivate%2520Phone%2520phone%253B%250Aprivate%2520Address%2520address%253B%250Aphone%252Caddress%25E4%25B8%258E%25E5%25AF%25B9%25E5%25BA%2594xml%25E4%25B8%25AD%25E7%259A%2584%250A%2520%2520%2520%2520id%253D%2522address%2522%250A%2520%2520%2520%2520id%253D%2522phone%2522%250A%2520%2520%2520%2520%25E7%259B%25B8%25E5%2590%258C%25EF%25BC%258C%25E5%2590%25A6%25E5%2588%2599%25E5%25B0%2586%25E4%25BC%259A%25E8%25A3%2585%25E9%2585%258D%25E5%25A4%25B1%25E8%25B4%25A5%25E3%2580%2582%250A%2520%2520%2520%2520%250A%25E5%25AF%25B9%25E4%25BA%258E%25E6%258C%2589%25E7%2585%25A7%25E7%25B1%25BB%25E5%259E%258B%25E8%25A3%2585%25E9%2585%258D%25E7%259A%2584byType%25E6%259D%25A5%25E8%25AF%25B4%25EF%25BC%258C%25E4%25B8%258D%25E8%25AE%25BA%25E4%25BD%25A0bean%25E9%2585%258D%25E7%25BD%25AE%25E7%259A%2584%25E5%2590%258D%25E7%25A7%25B0%25E6%2598%25AF%25E4%25BB%2580%25E4%25B9%2588%25EF%25BC%258C%25E5%258F%25AA%25E8%25A6%2581%25E6%258C%2587%25E5%25AE%259A%25E4%25BA%2586%25E7%259B%25B8%25E5%25BA%2594%25E7%259A%2584class%25EF%25BC%258C%25E9%2582%25A3%25E4%25B9%2588%250Aautowire%25E9%2583%25BD%25E4%25BC%259A%25E8%2587%25AA%25E5%258A%25A8%25E6%258C%2589%25E7%2585%25A7clss%25E6%258C%2587%25E5%25AE%259A%25E8%25BF%259B%25E8%25A1%258C%25E8%25A3%2585%25E9%2585%258D%25E3%2580%2582%25E4%25BD%2586%25E6%2598%25AF%25E5%25BD%2593%25E4%25B8%2580%25E4%25B8%25AA%25E7%25B1%25BB%25E6%258C%2587%25E5%25AE%259A%25E4%25BA%2586%25E5%25A4%259A%25E4%25B8%25AAclass%25EF%25BC%258C%25E4%25B9%259F%25E4%25BC%259A%25E8%25A3%2585%25E9%2585%258D%25E5%25A4%25B1%25E8%25B4%25A5%25E3%2580%2582" style="width: 767px; height: 383px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<p><em><strong>优缺点</strong></em></p>
+<p>在一般情况下，在实际的 Bean 配置文件里设置 autowire 属性进行自动装配将会装配 Bean 的所有属性，然而，若只希望装配个别属性时， autowire 属性就不够灵活了。</p>
+<p> Autowire 属性要么根据类型自动装配，要么根据名称自动装配，不能两者兼而有之。</p>
+<p>项目中很少使用自动装配功能。</p>
+</li>
+</ul>
+<h2 id="Bean的继承-parent-”父类bean”"><a href="#Bean的继承-parent-”父类bean”" class="headerlink" title="Bean的继承(parent=”父类bean”)"></a>Bean的继承(parent=”父类bean”)</h2><ul>
+<li>Spring 允许继承 Bean 的配置，被继承的 Bean 称为父 Bean ，继承这个父 Bean的 Bean 称为子 Bean</li>
+<li>子 Bean 从父 Bean 中继承配置，包括 Bean 的属性配置</li>
+<li> 子 Bean 也可以覆盖从父 Bean 继承过来的配置</li>
+</ul>
+<p><strong>可以类比Java面向对象中继承的概念，在bean的继承中,子类继承父类，可以完全继承父类的所有配置，当然子类自己也可以重写配置，并且该重写记录会覆盖父类。</strong></p>
+<h3 id="示例-10"><a href="#示例-10" class="headerlink" title="示例"></a>示例</h3><iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%253C%21--%2520%2520%2520%2520%25E7%25BB%25A7%25E6%2589%25BF%2520Bean%2520%25E9%2585%258D%25E7%25BD%25AE--%253E%250A%2520%2520%2520%2520%253Cbean%2520id%253D%2522address%2522%2520%2520parent%253D%2522address2%2522%2520p%253Astreet%253D%2522%25E7%2599%25BD%25E6%259D%25A8%25E8%25A1%2597%25E9%2581%2593%2522%2520%253E%253C%252Fbean%253E%250A%253C%21--%2520%2520%2520%2520bean%25E9%2585%258D%25E7%25BD%25AE%25E7%259A%2584%25E7%25BB%25A7%25E6%2589%25BF%25EF%25BC%258C%25E4%25BD%25BF%25E7%2594%25A8parent%25E5%25B1%259E%25E6%2580%25A7%25E6%258C%2587%25E5%25AE%259A%25E7%25BB%25A7%25E6%2589%25BF%25E5%2593%25AA%25E4%25B8%25AAbean%25E9%2585%258D%25E7%25BD%25AE--%253E%250A%2520%2520%2520%2520%253Cbean%2520id%253D%2522address2%2522%2520%2520class%253D%2522cn.ex.waer.bean.Test1.Address%2522%2520p%253Astreet%253D%2522%25E7%2599%25BD%25E6%259D%25A8%25E8%25A1%2597%25E9%2581%2593%2522%2520p%253Acity%253D%2522%25E6%259D%25AD%25E5%25B7%259E%2522%253E%253C%252Fbean%253E%250A%253C%21--%2520%2520%2520%2520%253Cbean%2520id%253D%2522phone%2522%2520class%253D%2522cn.ex.waer.bean.Test1.Phone%2522%2520p%253Abrand%253D%2522%25E5%25B0%258F%25E7%25B1%25B3%2522%2520p%253Acountry%253D%2522%25E4%25B8%25AD%25E5%259B%25BD%2522%253E%253C%252Fbean%253E--%253E%250A%253C%21--%2520%2520%2520%2520%253Cbean%2520id%253D%2522phone2%2522%2520parent%253D%2522phone%2522%2520p%253Abrand%253D%2522oppo%2522%253E%253C%252Fbean%253E--%253E%250A%2520%2520%2520%2520%253Cbean%2520id%253D%2522user%2522%2520class%253D%2522cn.ex.waer.bean.Test1.User%2522%2520p%253Aname%253D%2522%25E5%25B0%258F%25E8%258A%25B9%2522%2520autowire%253D%2522byName%2522%253E%253C%252Fbean%253E" style="width: 1010px; height: 311px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<p>上述示例中，address通过parent属性指定他的继承父类为address2,在父类中已经配置了city和sr=treet属性。子类address在继承之后重写了street属性为”白杨街道”，将覆盖掉父类中的”下沙”.</p>
+<p><em><strong>结果</strong></em></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe</span><br><span class="line">  src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=User%257Bname%253D%27%25E5%25B0%258F%25E8%258A%25B9%27%252C%2520phone%253Dnull%252C%2520address%253DAddress%257BCity%253D%27%25E6%259D%25AD%25E5%25B7%259E%27%252C%2520Street%253D%27%25E7%2599%25BD%25E6%259D%25A8%25E8%25A1%2597%25E9%2581%2593%27%257D%257D"</span><br><span class="line">  style="width: 785px; height: 203px; border:0; transform: scale(1); overflow:hidden;"</span><br><span class="line">  sandbox="allow-scripts allow-same-origin"&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Bean的抽象"><a href="#Bean的抽象" class="headerlink" title="Bean的抽象"></a>Bean的抽象</h2><ul>
+<li>父 Bean 可以作为配置模板，也可以作为 Bean 实例。若只想把父 Bean 作为模板，可以设置 <bean> 的 abstract 属性为 true ，这样 Spring 将不会实例化这个 Bean。</bean></li>
+<li>并不是 <bean> 元素里的所有属性都会被继承，比如： autowire 、 abstract 等。</bean></li>
+<li>也可以忽略父 Bean 的 class 属性，让子 Bean 指定自己的类，而共享相同的属性配置，但此时 abstract 必须设为 true。</li>
+</ul>
+<p><em><strong>同样可以类比Java面向对象中抽象的概念，抽象体只提供相关的方法，具体的实现由继承他的子类去完成，当然，Bean作为抽象时，可以当作一个bean配置模板，当其中abstracts=true时，容器将不会对它进行实例化。</strong></em></p>
+<h3 id="示例-11"><a href="#示例-11" class="headerlink" title="示例"></a>示例</h3><iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%253Cbean%2520id%253D%2522address2%2522%2520%2520abstract%253D%2522true%2522%2520class%253D%2522cn.ex.waer.bean.Test1.Address%2522%2520p%253Astreet%253D%2522%25E7%2599%25BD%25E6%259D%25A8%25E8%25A1%2597%25E9%2581%2593%2522%2520p%253Acity%253D%2522%25E6%259D%25AD%25E5%25B7%259E%2522%253E%253C%252Fbean%253E" style="width: 1024px; height: 221px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<h2 id="依赖-Bean-配置"><a href="#依赖-Bean-配置" class="headerlink" title="依赖 Bean 配置"></a>依赖 Bean 配置</h2><ul>
+<li>Spring 允许用户通过 depends-on 属性设定 Bean 前置依赖的 Bean ，前置依赖的Bean 会在本 Bean 实例化之前创建好。如果前置依赖于多个 Bean ，则可以通过逗号，空格或的方式配置 Bean 的名称</li>
+</ul>
+<h3 id="示例-12"><a href="#示例-12" class="headerlink" title="示例"></a>示例</h3><iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%253Cbean%2520id%253D%2522phone%2522%2520class%253D%2522cn.ex.waer.bean.Test1.Phone%2522%2520p%253Abrand%253D%2522OPPOA9%2522%2520p%253Acountry%253D%2522%25E4%25B8%25AD%25E5%259B%25BD%2522%253E%253C%252Fbean%253E%250A%253C%21--%2520%2520%2520%2520%25E8%25A6%2581%25E6%25B1%2582%25E5%259C%25A8%25E9%2585%258D%25E7%25BD%25AEuser%25E6%2597%25B6%25EF%25BC%258C%25E5%25BF%2585%25E9%25A1%25BB%25E6%259C%2589%25E5%2585%25B3%25E8%2581%2594%25E7%259A%2584phone%25EF%25BC%258C%25E5%25B0%25B1%25E6%2598%25AF%25E8%25AF%25B4user%25E4%25BE%259D%25E8%25B5%2596phone%25E8%25BF%2599%25E4%25B8%25AAbean--%253E%250A%2520%2520%2520%2520%253Cbean%2520id%253D%2522user%2522%2520class%253D%2522cn.ex.waer.bean.Test1.User%2522%2520p%253Aname%253D%2522%25E5%25B0%258F%25E8%258A%25B3%2522%2520p%253Aphone-ref%253D%2522phone%2522%2520depends-on%253D%2522phone%2522%253E%253C%252Fbean%253E" style="width: 1024px; height: 257px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<p>这样的配置输出之后的结果</p>
+<iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=User%257Bname%253D%27%25E5%25B0%258F%25E8%258A%25B3%27%252C%2520phone%253Dnull%252C%2520address%253Dnull%257D" style="width: 507px; height: 203px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<p><em><strong>依赖bean是指定了在获取B的bean时，要现在IOC容器中能获取A的bean，但是并不是说就把A的bean注入到了B的bean中了</strong></em></p>
+<p>因此输出均为null，如果想要在user中获取到phone所有配置，加上p:phone-ref=”phone” 即可</p>
+<p>加上之后的结果：</p>
+<iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=User%257Bname%253D%27%25E5%25B0%258F%25E8%258A%25B3%27%252C%2520phone%253DPhone%257Bbrand%253D%27OPPOA9%27%252C%2520country%253D%27%25E4%25B8%25AD%25E5%259B%25BD%27%257D%252C%2520address%253Dnull%257D" style="width: 779px; height: 203px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
+
+<p>应该注意区分bean的继承和依赖。</p>
+<h2 id="Bean的作用域-待深入…"><a href="#Bean的作用域-待深入…" class="headerlink" title="Bean的作用域[待深入…]"></a>Bean的作用域[待深入…]</h2><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>singleton</td>
+<td>默认值，每个IoC容器只创建一个Bean实例，且在IoC容器初始化时即创建Bean的实例</td>
+</tr>
+<tr>
+<td>prototype</td>
+<td>每次请求创建一个Bean实例，且在第一次调用getBean方法时才创建实例</td>
+</tr>
+<tr>
+<td>request</td>
+<td>一次HTTP请求中，一个Bean定义对应一个实例</td>
+</tr>
+<tr>
+<td>session</td>
+<td>一个HTTP Session中，一个Bean定义对应一个实例</td>
+</tr>
+<tr>
+<td>globalSession</td>
+<td>在一个全局的HTTP Session中，一个Bean定义对应一个实例</td>
+</tr>
+</tbody></table>
+<p><strong>在 Spring 中，可以在 <bean> 元素的 scope 属性里设置 Bean 的作用域。默认情况下， Spring 只为每个在 IoC 容器里声明的 Bean 创建唯一一个实例，整个 IoC 容器范围内都能共享该实例，所有后续的 getBean() 调用和 Bean 引用都将返回这个唯一的 Bean 实例。该作用域被称为 singleton ，它是所有 Bean 的默认作用域。</bean></strong></p>
 <h1 id="BUG-解决篇"><a href="#BUG-解决篇" class="headerlink" title="BUG/解决篇"></a>BUG/解决篇</h1><iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%25E8%25AF%25B4%25E6%2598%258E%25EF%25BC%259A%25E4%25B8%25BB%25E8%25A6%2581%25E8%25AE%25B0%25E5%25BD%2595%25E5%25AD%25A6%25E4%25B9%25A0%25E5%2592%258C%25E5%25BA%2594%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E4%25B8%25AD%25E9%2581%2587%25E5%2588%25B0%25E7%259A%2584bug%25E9%2597%25AE%25E9%25A2%2598%25E4%25BB%25A5%25E5%258F%258A%25E5%25AF%25B9%25E5%25BA%2594%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%25E6%2596%25B9%25E6%25A1%2588%25E6%2596%25B9%25E6%25B3%2595%25E3%2580%2582" style="width: 623px; height: 203px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
 
 
@@ -1525,7 +1624,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.8k</span>&nbsp;字
+                class="white-color">3k</span>&nbsp;字
             
             
             
