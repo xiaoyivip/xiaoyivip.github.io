@@ -46,9 +46,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="XiaoYi的博客" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="XiaoYi的博客" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 <!--<iframe width="250" scrolling="no" height="90" frameborder="0" allowtransparency="true" src="https://i.tianqi.com?c=code&id=7&icon=1&site=12"></iframe>-->
@@ -489,21 +489,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-27
+                    2021-04-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    12 分
                 </div>
                 
 
@@ -519,11 +519,6 @@
 
         
 
-        
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
         
 
         <div class="card-content article-card-content">
@@ -749,6 +744,61 @@
 </tr>
 </tbody></table>
 <p><strong>在 Spring 中，可以在 <bean> 元素的 scope 属性里设置 Bean 的作用域。默认情况下， Spring 只为每个在 IoC 容器里声明的 Bean 创建唯一一个实例，整个 IoC 容器范围内都能共享该实例，所有后续的 getBean() 调用和 Bean 引用都将返回这个唯一的 Bean 实例。该作用域被称为 singleton ，它是所有 Bean 的默认作用域。</bean></strong></p>
+<pre><code>## 工厂与SPEL
+</code></pre>
+<h3 id="SPEL"><a href="#SPEL" class="headerlink" title="SPEL"></a>SPEL</h3><p>Spring 表达式语言（ SpEL ）：是一个支持运行时查询和操作对象图的强大的表达式语言。语法类似于 EL ， SpEL 使用 #{…} 作为定界符，所有在大框号中的字符都将被认为是 SpEL 。</p>
+<p><strong>通过 SpEL 可以实现：</strong></p>
+<ul>
+<li>通过 Bean 的 id 对 Bean 进行引用</li>
+<li> 调用方法以及引用对象中的属性</li>
+<li> 计算表达式的值</li>
+<li> 正则表达式的匹配</li>
+<li>字面量的表示：</li>
+<li> 整数： <property name="type" value="#{1}"></property></li>
+<li>小数： <property name="price" value="#{5288.88}"></property></li>
+<li>科学计数法： <property name="capacity" value="#{1e4}"></property></li>
+<li>String 可以使用单引号或者双引号作为字符串的定界符号： <property name="name" value="#{'Chunchun'}"> 或 <property name="name" value="#{&quot;Chunchun&quot;}"></property></property></li>
+<li>Boolean： <property name="enabled" value="#{false}"></property></li>
+<li>引用其他对象<property name="phone" value="#{phone2}"></property></li>
+<li>引用其他对象的属性<property name="name" value="#{phone2.name}"></property></li>
+<li>引用其他对象的方法，还可以进行链式操作<property name="name" value="#{phone2.toString()}"><property name="name" value="#{phone2.toString().toUpperCase()}"></property></property></li>
+<li>算术运算符：+、-、*、/、%、^</li>
+<li>加号还可以用作字符串连接</li>
+<li>比较运算符：&lt;、&gt;、==、&lt;=、&gt;=、lt、gt、eq、le、ge</li>
+<li>逻辑运算符号：and、or、not</li>
+<li>if-else运算符：?:</li>
+<li>正则表达式：matches</li>
+<li>调用静态方法或静态属性：通过T()调用一个类的静态方法，它将返回一个Class Object，然后再调用相应的方法或属性。</li>
+</ul>
+<h3 id="示例-13"><a href="#示例-13" class="headerlink" title="示例"></a>示例</h3><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"address"</span> <span class="attr">class</span>=<span class="string">"cn.ex.waer.bean.Test2.Address"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    使用SPEL为属性付一个字面值--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"city"</span> <span class="attr">value</span>=<span class="string">"#{'杭州'}"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"street"</span> <span class="attr">value</span>=<span class="string">"#{'下沙'}"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"phone"</span> <span class="attr">class</span>=<span class="string">"cn.ex.waer.bean.Test2.Phone"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"brand"</span> <span class="attr">value</span>=<span class="string">"小米"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"country"</span> <span class="attr">value</span>=<span class="string">"中国"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"price"</span> <span class="attr">value</span>=<span class="string">"4999"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        使用SPEL引用类的静态方法--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"number"</span> <span class="attr">value</span>=<span class="string">"#{T(java.lang.Math).random()*10000}"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"cn.ex.waer.bean.Test2.User"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"李四"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--        使用SPEL引用其他的bean--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"phone"</span> <span class="attr">value</span>=<span class="string">"#{phone}"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--        使用SPEL引用其他bean的属性--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"city"</span> <span class="attr">value</span>=<span class="string">"#{address.city}"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--        使用SPEL使用运算符--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"info"</span> <span class="attr">value</span>=<span class="string">"#{phone.price&gt;=3000?'金领':'蓝领'}"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="工厂方法创建Bean"><a href="#工厂方法创建Bean" class="headerlink" title="工厂方法创建Bean"></a>工厂方法创建Bean</h3><p><strong>调用静态工厂方法创建 Bean 是将对象创建的过程封装到静态方法中，当客户端需要对象时，只需要简单地调用静态方法，而不需要关心创建对象的细节。</strong></p>
+<ol>
+<li><strong>要声明通过静态工厂方法创建的 Bean ，需要在 Bean 的 class 属性里指定拥有该工厂的方法的类，同时在 factory-method 属性里指定工厂方法的名称，最后使用 <constructor-arg> 元素为该方法传递方法参数。</constructor-arg></strong></li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticPhoneFactory</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String,Phone&gt; phones =<span class="keyword">new</span> HashMap&lt;String,Phone&gt;();</span><br><span class="line">    <span class="keyword">static</span> {</span><br><span class="line">        phones.put(<span class="string">"apple"</span>,<span class="keyword">new</span> Phone(<span class="string">"Apple"</span>,<span class="number">5288</span>));</span><br><span class="line">        phones.put(<span class="string">"xiaomi"</span>,<span class="keyword">new</span> Phone(<span class="string">"Xiaomi"</span>,<span class="number">2999</span>));</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Phone <span class="title">getPhone</span><span class="params">(String name)</span></span>{</span><br><span class="line">        <span class="keyword">return</span> phones.get(name);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--通过静态工厂方法来配置bean，注意不是骗子静态工厂的示例，而是配置bean的示例--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"phone"</span> <span class="attr">class</span>=<span class="string">"cn.ex.waer.bean.Test3.StaticPhoneFactory"</span> <span class="attr">factory-method</span>=<span class="string">"getPhone"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--通过构造器配置调用bean属性--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">"xiaomi"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li><p><strong>调用实例工厂方法创建Bean是将对象的创建过程封装到另一个对象实例的方法里，当客户端需要请求对象时，只需要简单的调用该实例方法而不需要关心实现细节。</strong></p>
+<p><strong>要声明通过实例工厂方法创建的 Bean ，需要在 Bean 的 Factory-bean属性里指定拥有该工厂的方法的Bean，同时在 factory-method 属性里指定工厂方法的名称，最后使用 <constructor-arg> 元素为该方法传递方法参数。</constructor-arg></strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InstancePhoneFactory</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String,Phone&gt; phones=<span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">InstancePhoneFactory</span><span class="params">()</span> </span>{</span><br><span class="line">        phones = <span class="keyword">new</span> HashMap&lt;String,Phone&gt;();</span><br><span class="line">        phones.put(<span class="string">"apple"</span>,<span class="keyword">new</span> Phone(<span class="string">"Apple"</span>,<span class="number">5288</span>));</span><br><span class="line">        phones.put(<span class="string">"xiaomi"</span>,<span class="keyword">new</span> Phone(<span class="string">"Xiaomi"</span>,<span class="number">2999</span>));</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Phone <span class="title">getPhone</span><span class="params">(String name)</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> phones.get(name);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<p>​        </p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置工厂实例--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"phoneFactory"</span> <span class="attr">class</span>=<span class="string">"cn.ex.waer.bean.Test3.InstancePhoneFactory"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    通过实例工厂方法来配置Bean--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"phone"</span> <span class="attr">factory-bean</span>=<span class="string">"phoneFactory"</span> <span class="attr">factory-method</span>=<span class="string">"getPhone"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">value</span>=<span class="string">"apple"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="3">
+<li><p><strong>spring中两种不同的bean一种是普通bean，一种工厂bean（FactoryBean）其返回的对象不是指类的一个实例，而是该工厂的getObject方法所返回的对象</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自定义工厂bean并实现对应的接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PhoneFactoryBean</span> <span class="keyword">implements</span> <span class="title">FactoryBean</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> String brand;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBrand</span><span class="params">(String brand)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.brand = brand;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">/*返回Bean对象*/</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getObject</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Phone(brand,<span class="number">5288</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">/*返回Bean类型*/</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Class&lt;?&gt; getObjectType() {</span><br><span class="line">        <span class="keyword">return</span> Phone.class;</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">/*默认作用域*/</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSingleton</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<p>​        </p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    通过工厂bean配置bean的实例，class：FactoryBean的全类名，--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    property：配置FactoryBean的属性，但实际上返回的实例确是FactoryBean的--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    getObject()方法返回的实例--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"phone"</span> <span class="attr">class</span>=<span class="string">"cn.ex.waer.bean.Test3.PhoneFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"brand"</span> <span class="attr">value</span>=<span class="string">"Apple"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
+
 <h1 id="BUG-解决篇"><a href="#BUG-解决篇" class="headerlink" title="BUG/解决篇"></a>BUG/解决篇</h1><iframe src="https://carbon.now.sh/embed?bg=rgba%28144%2C19%2C254%2C1%29&amp;t=cobalt&amp;wt=none&amp;l=text%2Fx-c%2B%2Bsrc&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%25E8%25AF%25B4%25E6%2598%258E%25EF%25BC%259A%25E4%25B8%25BB%25E8%25A6%2581%25E8%25AE%25B0%25E5%25BD%2595%25E5%25AD%25A6%25E4%25B9%25A0%25E5%2592%258C%25E5%25BA%2594%25E7%2594%25A8%25E8%25BF%2587%25E7%25A8%258B%25E4%25B8%25AD%25E9%2581%2587%25E5%2588%25B0%25E7%259A%2584bug%25E9%2597%25AE%25E9%25A2%2598%25E4%25BB%25A5%25E5%258F%258A%25E5%25AF%25B9%25E5%25BA%2594%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%25E6%2596%25B9%25E6%25A1%2588%25E6%2596%25B9%25E6%25B3%2595%25E3%2580%2582" style="width: 623px; height: 203px; border:0; transform: scale(1); overflow:hidden;" sandbox="allow-scripts allow-same-origin"> </iframe>
 
 
@@ -1444,8 +1494,6 @@
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -1625,7 +1673,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.9k</span>&nbsp;字
+                class="white-color">4.1k</span>&nbsp;字
             
             
             
